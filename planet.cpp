@@ -1,4 +1,6 @@
 #include <iostream>
+#include <stdio.h>
+#include <string.h>
 #include "planet.h"
 #include "unit.h"
 using namespace std;
@@ -25,7 +27,7 @@ void planet::setZ(int z)
 void planet::setPlanetName(char *name)
 {
   //*planetName=*name;
-	strcpy(name,planetName);
+    strcpy(name,planetName);
 }
 char* planet::getPlanetName(void)
 {
@@ -133,10 +135,11 @@ void planet::Shop(ship &s)
 	char pressedKey = '0';
 	while(pressedKey != 'E' && pressedKey != 'e')
 	{
-	  system("cls");
+	  //system("cls");
 //	  SetConsoleTextAttribute(hStdout, FOREGROUND_GREEN | FOREGROUND_RED);
 	  cout << "\n\t\t\tWelcome to " << *planetName << endl;
 //	  SetConsoleTextAttribute(hStdout, FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_BLUE);
+      int n=0; for (n=0;n < 24; n++) { printf("\n"); }
 	  cout << "\tYou have the follwing..." << endl;
 	  cout << "\t\tIron: " << s.getIron() << "Sugar: " << s.getSugar() << "Rice: " << s.getRice() << endl;
 	  cout << "\t\tMoney: " << s.getFunds() << "Fuel: " << s.getFuel() << "Cargo Space left: " << s.getCARGO_MAX()-(s.getIron()+s.getRice()+s.getSugar()) << endl; 

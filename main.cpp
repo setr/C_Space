@@ -6,13 +6,13 @@
 #include "planetoid.h"
 #include <ctime>    // For time()
 #include <cstdlib>  // For srand() and rand()
-#include <windows.h>
-#include <string>
+//#include <windows.h>
+#include <string.h>
 #include <cctype>
 #include <iostream> // for debugging right now
 #include <fstream>  // ditto
 #include <cmath> // for sqrt
-//#include <stdio> // for date time
+#include <stdio.h> // for date time
 
 
 using namespace std; 
@@ -23,7 +23,7 @@ const int POSITIVE_YLIMIT=19;
 const int NEGATIVE_YLIMIT=1;
 const int PLANET_NAME_SIZE=9;
 const int UNIVERSE_ARRAY_SIZE=9;
-HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+//HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 ifstream infile;
 ofstream outfile;
 time_t now = time(0);
@@ -523,9 +523,9 @@ int drawHUD(int mx, int my, ship &s)
   int input=0;
 
    cout << "The Moon (m), your home base is located at: "; 
-   SetConsoleTextAttribute(hOut, FOREGROUND_GREEN);
+   //SetConsoleTextAttribute(hOut, FOREGROUND_GREEN);
    cout << mx << ", " << my << " - You are located at: " << s.getX() << ", " << s.getY();
-   SetConsoleTextAttribute(hOut, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
+   //SetConsoleTextAttribute(hOut, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
    cout << "\nStatus - Fuel: " << s.getFuel() << " Spacebucks: " << s.getFunds() << endl;
    cout << "Cargo Hold: Rice: " << s.getRice() << " IRON: " << s.getIron() << " SUGAR: " << s.getSugar() << endl;
    //cout << "What do you want to do? (1 +x 2 -x 3 +y 4 -y -- 8 is quit) ";
